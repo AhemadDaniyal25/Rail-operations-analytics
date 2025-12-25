@@ -1,0 +1,6 @@
+train_id,train_type,asset_age_years,asset_id
+T1001,ICE,8,1
+T1002,ICE,6,2
+T2001,IC,12,3
+T3001,RE,15,4
+T4001,S-Bahn,20,5

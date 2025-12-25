@@ -1,0 +1,9 @@
+train_id,route,region,train_type,asset_age_years,date,delay_minutes,energy_kwh,maintenance_event
+T1001,Munich–Berlin,DE-South,ICE,8,2024-01-01,5,4200,0
+T1002,Munich–Berlin,DE-South,ICE,6,2024-01-01,0,4100,0
+T2001,Hamburg–Cologne,DE-North,IC,12,2024-01-01,18,5300,1
+T3001,Frankfurt–Stuttgart,DE-West,RE,15,2024-01-01,25,3900,1
+T1001,Munich–Berlin,DE-South,ICE,8,2024-01-02,12,4500,0
+T2001,Hamburg–Cologne,DE-North,IC,12,2024-01-02,0,5100,0
+T3001,Frankfurt–Stuttgart,DE-West,RE,15,2024-01-02,30,4100,1
+T4001,Cologne–Düsseldorf,DE-West,S-Bahn,20,2024-01-02,8,2800,0
