@@ -1,40 +1,50 @@
-# Rail Operations Analytics Platform
+# Rail Operations Data Validation Framework
 
 ## Overview
-This project demonstrates an end-to-end analytics platform for rail operations, transforming raw operational data into decision-ready insights to improve punctuality, energy efficiency, and asset reliability.
+This repository implements a **Python-based data validation framework for rail operations data**, inspired by quality assurance workflows used in engineering tools and transportation systems.
 
-The project simulates challenges commonly faced by rail operators and mobility companies, such as delay analysis, energy optimization, and maintenance prioritization.
+The project focuses on **systematic verification, data quality checks, and automated testing**, rather than exploratory analytics or dashboards.
 
-## Business Problem
-Rail operations generate large volumes of data, but insights are often fragmented across teams. This project addresses:
-- Identifying root causes of delays across routes
-- Balancing punctuality with energy consumption
-- Understanding the operational impact of maintenance events
-- Communicating insights clearly to non-technical stakeholders
+It is designed to demonstrate skills relevant to **Quality Assurance in Engineering Tools**, including rule-based validation, test automation, and structured reporting.
+
+---
+
+## Key Features
+
+- **12 explicit validation rules** covering:
+  - Numerical validity (e.g. delay bounds, energy constraints)
+  - Data completeness (missing operational fields)
+  - Consistency rules (route–region mapping, maintenance flags)
+- **Validation engine** that executes all rules deterministically
+- **Severity-based issue classification** (ERROR / WARNING)
+- **Automated quality reports** (JSON output)
+- **31+ automated pytest unit tests**
+- Clean `src/` project layout, CI/CD–ready
+
+---
+
+## Validation Scope
+
+Examples of implemented checks include:
+- Non-negative and realistic delay bounds
+- Positive energy consumption
+- Asset age realism
+- Mandatory operational fields (route, train ID, energy, delay)
+- Route-to-region consistency
+- Binary maintenance event flags
+- Alphanumeric route identifiers
+
+Each rule has:
+- explicit pass/fail criteria
+- clear error messages
+- unit test coverage
+
+---
 
 ## Architecture
-- **Python**: Data ingestion, validation, and transformation
-- **SQL**: Dimensional data modeling and KPI definitions
-- **Power BI**: Interactive dashboards for operational decision support
 
-## Key KPIs
-- Average delay by route
-- On-time performance indicators
-- Energy consumption vs delay trade-offs
-- Maintenance impact on operational delays
+- **Python**: validation rules, engine, reporting
+- **pytest**: automated unit testing
+- **Rule-based design**: similar to plugin validation frameworks used in engineering tools
 
-## Results & Insights
-- Certain routes show higher energy consumption without proportional punctuality improvements, indicating optimization potential.
-- Maintenance events correlate with higher short-term delays, highlighting the need for proactive planning.
-- Clear KPI visualization enables faster and more informed operational decision-making.
 
-## Dashboards
-Power BI dashboard screenshots are available in the `powerbi/dashboard_screenshots/` folder:
-- Operations Overview
-- Energy & Sustainability
-- Maintenance Insights
-
-## How to Run
-```bash
-pip install -r requirements.txt
-python src/pipeline.py
